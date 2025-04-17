@@ -1,31 +1,52 @@
 // Variables
-$planetCount: 9;
-$planetSize: 1200px;
-$planetSpacing: 3500px; // Increased spacing for more dramatic depth
-$planetTransitionSpeed: 2s;
-$mainPlanetViewAmount: -200;
+$rigCount: 30;
+$rigSize: 1200px;
+$rigSpacing: 3500px; // Increased spacing for more dramatic depth
+$rigTransitionSpeed: 2s;
+$mainRigViewAmount: -200;
 $globalPerspective: 2500px; // Increased perspective depth
 $sceneAxisTilt: -35deg; // More dramatic tilt angle
 
-// Planet colors
-$mercury: #e8927c;
-$venus: #b45d15;
-$earth: #26daaa;
-$mars: #e55f45;
-$jupiter: orange;
-$saturn: #b29d81;
-$uranus: #8dcdd8;
-$neptune: #4f83e2;
-$pluto: #ff8732;
+// Sound system colors
+$adrians_wall: #e8927c;
+$agape: #b45d15;
+$battery_acid: #26daaa;
+$curse_of_the_scarab: #e55f45;
+$diy_hifi: orange;
+$dub_divination: #b29d81;
+$echo_chamber: #8dcdd8;
+$el_gran_mono: #4f83e2;
+$entropy: #ff8732;
+$folly_hifi: #a155e7;
+$general_feelings: #57e157;
+$goodys_hifi: #d8a71d;
+$heartical_hi_powa: #e12121;
+$housewifes_choice: #21bde1;
+$hyper_global: #e121b0;
+$mahikai: #21e19b;
+$new_flower: #c3e121;
+$redback: #e13421;
+$roots_time: #8a4242;
+$rudi_sound: #4288a1;
+$sasquatch: #424e8a;
+$slack: #578a42;
+$solidarity: #8a6c42;
+$sub_temple: #8a428a;
+$sub_yard: #428a88;
+$system_unknown: #595959;
+$tribe: #936f3e;
+$trip_hazard: #3e9384;
+$virus: #3e4193;
+$yabai_hifi: #a51616;
 
-.solarExplorer {
+.soundExplorer {
   width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-// Solar System viewport with 3D perspective
+// Sound System viewport with 3D perspective
 .viewport {
   position: absolute;
   transform: rotatex($sceneAxisTilt);
@@ -37,8 +58,8 @@ $pluto: #ff8732;
   perspective-origin: 50% 0%; // Origin at top center for full height effect
 }
 
-// Planet system container - needs preserve-3d
-.solarSystem {
+// Rig system container - needs preserve-3d
+.soundSystem {
   transform-style: preserve-3d;
   pointer-events: none;
   height: 100%;
@@ -47,8 +68,8 @@ $pluto: #ff8732;
   right: 0;
 }
 
-// Base styles for planet containers
-.planetContainer {
+// Base styles for rig containers
+.rigContainer {
   position: absolute;
   left: 0;
   right: 0;
@@ -57,16 +78,16 @@ $pluto: #ff8732;
   margin: auto;
 }
 
-// Base planet styles
-.planet {
-  height: $planetSize;
-  width: $planetSize;
-  border-radius: $planetSize / 2;
+// Base rig styles
+.rig {
+  height: $rigSize;
+  width: $rigSize;
+  border-radius: $rigSize / 2;
   transition: transform 2.8s 0.3s cubic-bezier(0.33, 0, 0, 1), opacity 2s 0.8s,
     box-shadow 0.5s 0.3s;
   background-size: 1140px 910px !important;
   top: auto;
-  bottom: -$planetSize + $mainPlanetViewAmount;
+  bottom: -$rigSize + $mainRigViewAmount;
   position: absolute;
   left: 0;
   right: 0;
@@ -76,7 +97,17 @@ $pluto: #ff8732;
   transform-style: preserve-3d;
 }
 
-// Add keyframes for planet rotation
+// Add keyframes for rig rotation
+@keyframes rig-rotate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1140px 0;
+  }
+}
+
+// Add keyframes for planet rotation (for compatibility)
 @keyframes planet-rotate {
   0% {
     background-position: 0 0;
@@ -86,8 +117,8 @@ $pluto: #ff8732;
   }
 }
 
-// Planet description section
-.planetDescription {
+// Rig description section
+.rigDescription {
   width: 620px;
   text-align: center;
   position: fixed;
@@ -155,8 +186,8 @@ $pluto: #ff8732;
   }
 }
 
-// Moon styling
-.moon {
+// Component styling
+.component {
   height: 200px;
   width: 200px;
   border-radius: 200px;
@@ -185,7 +216,7 @@ $pluto: #ff8732;
   }
 }
 
-// Trajectory paths for moons
+// Trajectory paths for components
 .trajectory {
   border: 2px dashed white;
   position: absolute;
