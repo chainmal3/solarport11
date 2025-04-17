@@ -1,0 +1,312 @@
+// Variables
+$planetCount: 9;
+$planetSize: 1200px;
+$planetSpacing: 3500px; // Increased spacing for more dramatic depth
+$planetTransitionSpeed: 2s;
+$mainPlanetViewAmount: -200;
+$globalPerspective: 2500px; // Increased perspective depth
+$sceneAxisTilt: -35deg; // More dramatic tilt angle
+
+// Planet colors
+$mercury: #e8927c;
+$venus: #b45d15;
+$earth: #26daaa;
+$mars: #e55f45;
+$jupiter: orange;
+$saturn: #b29d81;
+$uranus: #8dcdd8;
+$neptune: #4f83e2;
+$pluto: #ff8732;
+
+.solarExplorer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+// Solar System viewport with 3D perspective
+.viewport {
+  position: absolute;
+  transform: rotatex($sceneAxisTilt);
+  perspective: $globalPerspective;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.5s cubic-bezier(0.33, 0, 0, 1);
+  perspective-origin: 50% 0%; // Origin at top center for full height effect
+}
+
+// Planet system container - needs preserve-3d
+.solarSystem {
+  transform-style: preserve-3d;
+  pointer-events: none;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+// Base styles for planet containers
+.planetContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+}
+
+// Base planet styles
+.planet {
+  height: $planetSize;
+  width: $planetSize;
+  border-radius: $planetSize / 2;
+  transition: transform 2.8s 0.3s cubic-bezier(0.33, 0, 0, 1), opacity 2s 0.8s,
+    box-shadow 0.5s 0.3s;
+  background-size: 1140px 910px !important;
+  top: auto;
+  bottom: -$planetSize + $mainPlanetViewAmount;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  pointer-events: all;
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+// Add keyframes for planet rotation
+@keyframes planet-rotate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1140px 0;
+  }
+}
+
+// Planet description section
+.planetDescription {
+  width: 620px;
+  text-align: center;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 120px;
+  z-index: 1000 !important;
+  color: white;
+  font-weight: 100;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+  pointer-events: none; // Disable interactions for the description container
+  transform: none !important;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  h1 {
+    letter-spacing: 16px;
+    font-size: 34px;
+    font-weight: 100;
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 60px;
+    margin-bottom: 6px;
+    font-weight: 100;
+    font-size: 10px;
+    letter-spacing: 5px;
+  }
+
+  p {
+    line-height: 26px;
+    margin-top: 14px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+    font-weight: 100;
+    font-size: 10px;
+    letter-spacing: 5px;
+  }
+
+  a {
+    color: #fea082;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 0 2px 5px 0px;
+    border-bottom: 2px solid;
+    transition: all 0.2s;
+    position: relative;
+    left: 0;
+    letter-spacing: 5px;
+    pointer-events: auto; // Re-enable pointer events for links
+    cursor: pointer; // Add cursor pointer for better UX
+
+    &:hover {
+      padding: 0 10px 5px 10px;
+      left: -1px;
+    }
+
+    span {
+      letter-spacing: 0;
+      margin-left: -5px;
+    }
+  }
+}
+
+// Moon styling
+.moon {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  transition: all 0.6s 0.2s;
+
+  h2 {
+    font-weight: 100;
+    font-size: 40px;
+    letter-spacing: 5px;
+    margin: 0;
+    position: relative;
+    top: -120px;
+  }
+
+  h3 {
+    font-weight: 100;
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin: 0;
+    position: relative;
+    top: -120px;
+  }
+}
+
+// Trajectory paths for moons
+.trajectory {
+  border: 2px dashed white;
+  position: absolute;
+  border-radius: 3400px;
+  background: none !important;
+  z-index: -2;
+  opacity: 0;
+  transition: all 0.6s 0s;
+}
+
+// Overlay for the ground shadow effect
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+  border-bottom: 200px solid black;
+  width: 1800px;
+  height: 620px;
+  top: auto;
+  transform: none;
+  top: 400px;
+  left: -303px;
+  opacity: 0.3;
+  border-radius: 100%;
+  z-index: 0;
+  box-shadow: 0px -150px 180px 80px rgba(0, 0, 0, 0.3) inset;
+}
+
+// Read more panel styles
+.infoPanel {
+  position: absolute;
+  right: -520px;
+  width: 400px; // Increased width for better readability
+  top: 0;
+  height: 100vh;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); // Smoother, longer animation
+  color: black;
+  background: white;
+  padding: 10px 60px 0px 60px;
+  overflow-y: auto; // Better scrolling behavior
+  z-index: 1000; // Ensure appears on top
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2); // Add shadow for depth
+
+  &.open {
+    right: 0;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 100;
+    margin: 0 0 0 0;
+    letter-spacing: 3px;
+    top: 0;
+    padding: 49px 0 0 0;
+    width: 100%;
+    font-size: 20px;
+
+    &::after {
+      width: 30px;
+      height: 2px;
+      background: black;
+      display: block;
+      content: "";
+      margin-bottom: 30px;
+      margin-top: 8px;
+    }
+  }
+
+  h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 30px;
+
+    &::after {
+      width: 30px;
+      height: 2px;
+      background: black;
+      display: block;
+      content: "";
+      margin-top: 8px;
+    }
+  }
+
+  p {
+    color: #a0a0a0;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  img {
+    border-radius: 2px;
+    width: 100%;
+  }
+}
+
+// Close button for the info panel
+.closeButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  transition: all 0.4s ease; // Improved transition
+  z-index: 999; // High z-index but below the panel
+  width: 100%;
+  background: rgba(
+    56,
+    37,
+    99,
+    0.5
+  ); // Slightly more opaque for better visibility
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  backdrop-filter: blur(3px); // Add subtle blur effect
+}
