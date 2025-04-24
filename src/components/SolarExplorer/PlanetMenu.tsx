@@ -15,211 +15,181 @@ const rigData: Record<PlanetType, RigInfo> = {
     name: "Adrian's Wall",
     location: "Melbourne",
     color: "#e8927c",
-    previewImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    previewImage: "/images/placeholder.png",
   },
   agape: {
     name: "Agape",
     location: "Melbourne",
     color: "#b45d15",
-    previewImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    previewImage: "/images/placeholder.png",
   },
   battery_acid: {
     name: "Battery Acid",
     location: "Melbourne",
     color: "#26daaa",
-    previewImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    previewImage: "/images/placeholder.png",
   },
   curse_of_the_scarab: {
     name: "Curse of the Scarab",
     location: "Melbourne",
     color: "#e55f45",
-    previewImage:
-      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg",
+    previewImage: "/images/placeholder.png",
   },
   diy_hifi: {
     name: "DIY HiFi",
     location: "Melbourne",
     color: "orange",
-    previewImage:
-      "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+    previewImage: "/images/placeholder.png",
   },
   dub_divination: {
     name: "Dub Divination",
     location: "Melbourne",
     color: "#b29d81",
-    previewImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg",
+    previewImage: "/images/placeholder.png",
   },
   echo_chamber: {
     name: "Echo Chamber",
     location: "Melbourne",
     color: "#8dcdd8",
-    previewImage:
-      "https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png",
+    previewImage: "/images/placeholder.png",
   },
   el_gran_mono: {
     name: "El Gran Mono",
     location: "Melbourne",
     color: "#4f83e2",
-    previewImage:
-      "https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png",
+    previewImage: "/images/placeholder.png",
   },
   entropy: {
     name: "Entropy",
     location: "Melbourne",
     color: "#ff8732",
-    previewImage:
-      "https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png",
+    previewImage: "/images/placeholder.png",
   },
   folly_hifi: {
     name: "Folly HiFi",
     location: "Melbourne",
     color: "#e8927c",
-    previewImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    previewImage: "/images/placeholder.png",
   },
   general_feelings: {
     name: "General Feelings",
     location: "Melbourne",
     color: "#b45d15",
-    previewImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    previewImage: "/images/placeholder.png",
   },
   goodys_hifi: {
     name: "Goodys HiFi",
     location: "Melbourne",
     color: "#26daaa",
-    previewImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    previewImage: "/images/placeholder.png",
   },
   heartical_hi_powa: {
     name: "Heartical Hi-Powa",
     location: "Melbourne",
     color: "#e55f45",
-    previewImage:
-      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg",
+    previewImage: "/images/placeholder.png",
   },
   housewifes_choice: {
     name: "Housewife's Choice",
     location: "Melbourne",
     color: "orange",
-    previewImage:
-      "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+    previewImage: "/images/placeholder.png",
   },
   hyper_global: {
     name: "Hyper Global",
     location: "Melbourne",
     color: "#b29d81",
-    previewImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg",
+    previewImage: "/images/placeholder.png",
   },
   mahikai: {
     name: "Mahikai",
     location: "Melbourne",
     color: "#8dcdd8",
-    previewImage:
-      "https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png",
+    previewImage: "/images/placeholder.png",
   },
   new_flower: {
     name: "New Flower",
     location: "Melbourne",
     color: "#4f83e2",
-    previewImage:
-      "https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png",
+    previewImage: "/images/placeholder.png",
   },
   redback: {
     name: "Redback",
     location: "Melbourne",
     color: "#ff8732",
-    previewImage:
-      "https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png",
+    previewImage: "/images/placeholder.png",
   },
   roots_time: {
     name: "Roots Time",
     location: "Melbourne",
     color: "#e8927c",
-    previewImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    previewImage: "/images/placeholder.png",
   },
   rudi_sound: {
     name: "Rudi Sound",
     location: "Melbourne",
     color: "#b45d15",
-    previewImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    previewImage: "/images/placeholder.png",
   },
   sasquatch: {
     name: "Sasquatch",
     location: "Melbourne",
     color: "#26daaa",
-    previewImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    previewImage: "/images/placeholder.png",
   },
   slack: {
     name: "Slack",
     location: "Melbourne",
     color: "#e55f45",
-    previewImage:
-      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg",
+    previewImage: "/images/placeholder.png",
   },
   solidarity: {
     name: "Solidarity",
     location: "Melbourne",
     color: "orange",
-    previewImage:
-      "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+    previewImage: "/images/placeholder.png",
   },
   sub_temple: {
     name: "Sub Temple",
     location: "Melbourne",
     color: "#b29d81",
-    previewImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg",
+    previewImage: "/images/placeholder.png",
   },
   sub_yard: {
     name: "Sub Yard",
     location: "Melbourne",
     color: "#8dcdd8",
-    previewImage:
-      "https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png",
+    previewImage: "/images/placeholder.png",
   },
   system_unknown: {
     name: "System Unknown",
     location: "Melbourne",
     color: "#4f83e2",
-    previewImage:
-      "https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png",
+    previewImage: "/images/placeholder.png",
   },
   tribe: {
     name: "Tribe",
     location: "Melbourne",
     color: "#ff8732",
-    previewImage:
-      "https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png",
+    previewImage: "/images/placeholder.png",
   },
   trip_hazard: {
     name: "Trip Hazard",
     location: "Melbourne",
     color: "#e8927c",
-    previewImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    previewImage: "/images/placeholder.png",
   },
   virus: {
     name: "Virus",
     location: "Melbourne",
     color: "#b45d15",
-    previewImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    previewImage: "/images/placeholder.png",
   },
   yabai_hifi: {
     name: "Yabai HiFi",
     location: "Melbourne",
     color: "#26daaa",
-    previewImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    previewImage: "/images/placeholder.png",
   },
 };
 

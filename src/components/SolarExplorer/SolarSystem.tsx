@@ -25,27 +25,23 @@ const rigData: Record<PlanetType, RigData> = {
     name: "Adrian's Wall",
     description:
       "Adrian's Wall sound system, bringing massive bass to Melbourne events with their custom-built stacks.",
-    bgImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    bgImage: "/images/placeholder.png",
   },
   agape: {
     name: "Agape",
     description:
       "Agape delivers deep, spiritual vibes with their meticulously tuned sound system, captivating Melbourne audiences with every session.",
-    bgImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    bgImage: "/images/placeholder.png",
   },
   battery_acid: {
     name: "Battery Acid",
     description:
       "Battery Acid brings raw, energetic sound to Melbourne's underground scene, known for their hard-hitting bass and powerful top-end.",
-    bgImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    bgImage: "/images/placeholder.png",
     speakers: [
       {
         name: "Sub",
-        image:
-          "https://img2.cgtrader.com/items/702173/682fad2a11/92k-moon-color-map-3d-model.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-160px", left: "800px" },
         size: "0.45",
       },
@@ -55,20 +51,17 @@ const rigData: Record<PlanetType, RigData> = {
     name: "Curse of the Scarab",
     description:
       "With a uniquely atmospheric sound, Curse of the Scarab delivers deep, mystical rhythms to Melbourne's dub and bass community.",
-    bgImage:
-      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg",
+    bgImage: "/images/placeholder.png",
     speakers: [
       {
         name: "Mid",
-        image:
-          "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-100px", left: "900px" },
         size: "0.45",
       },
       {
         name: "Bass",
-        image:
-          "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-160px", left: "100px" },
         size: "0.5",
       },
@@ -78,25 +71,23 @@ const rigData: Record<PlanetType, RigData> = {
     name: "DIY HiFi",
     description:
       "DIY HiFi embodies the self-built ethos, crafting their own speaker stacks to deliver authentic, homegrown sound in Melbourne.",
-    bgImage:
-      "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+    bgImage: "/images/placeholder.png",
     speakers: [
       {
         name: "Tweeter",
-        image: "http://stevealbers.net/albers/sos/jupiter/io/io_rgb_cyl.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-100px", left: "100px" },
         size: "0.4",
       },
       {
         name: "Horn",
-        image: "http://i.imgur.com/ZZBiHOH.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-210px", left: "400px" },
         size: "0.45",
       },
       {
         name: "Woofer",
-        image:
-          "https://vignette.wikia.nocookie.net/planet-texture-maps/images/1/14/Ganymede.jpg/revision/latest?cb=20180104001948",
+        image: "/images/placeholder.png",
         position: { top: "-70px", left: "900px" },
         size: "0.4",
       },
@@ -106,27 +97,23 @@ const rigData: Record<PlanetType, RigData> = {
     name: "Dub Divination",
     description:
       "Dub Divination creates spiritual sound experiences, channeling deep, meditative dub vibrations through their powerful system.",
-    bgImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg",
+    bgImage: "/images/placeholder.png",
     speakers: [
       {
         name: "Scoop",
-        image:
-          "https://pre00.deviantart.net/bea3/th/pre/i/2017/057/7/f/titan_texture_map_8k_by_fargetanik-db0f8m0.png",
+        image: "/images/placeholder.png",
         position: { top: "-100px", left: "100px" },
         size: "0.4",
       },
       {
         name: "Mid",
-        image:
-          "https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA12577-640x350.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-210px", left: "400px" },
         size: "0.45",
       },
       {
         name: "Top",
-        image:
-          "https://img.purch.com/w/660/aHR0cDovL3d3dy5zcGFjZS5jb20vaW1hZ2VzL2kvMDAwLzA0NC8yMzkvb3JpZ2luYWwvZW5jZWxhZHVzLW1hcC1jYXNzaW5pLmpwZw==",
+        image: "/images/placeholder.png",
         position: { top: "-70px", left: "900px" },
         size: "0.4",
       },
@@ -136,27 +123,23 @@ const rigData: Record<PlanetType, RigData> = {
     name: "Echo Chamber",
     description:
       "Echo Chamber specializes in spatial, reverberant sound that fills venues completely, creating immersive dub experiences for Melbourne audiences.",
-    bgImage:
-      "https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png",
+    bgImage: "/images/placeholder.png",
     speakers: [
       {
         name: "Bass",
-        image:
-          "http://celestia.simulatorlabbs.com/CelSL/textures/medres/miranda.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-100px", left: "100px" },
         size: "0.4",
       },
       {
         name: "Echo",
-        image:
-          "http://celestia.freedoors.org/Celestia-Doors/textures/medres/ariel.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-210px", left: "400px" },
         size: "0.45",
       },
       {
         name: "Delay",
-        image:
-          "http://celestia.freedoors.org/Celestia-Doors/textures/medres/titania.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-70px", left: "900px" },
         size: "0.4",
       },
@@ -166,27 +149,23 @@ const rigData: Record<PlanetType, RigData> = {
     name: "El Gran Mono",
     description:
       "El Gran Mono brings Latin-influenced sounds to Melbourne's scene, with a distinctively warm, rhythmic sound system setup.",
-    bgImage:
-      "https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png",
+    bgImage: "/images/placeholder.png",
     speakers: [
       {
         name: "Bajo",
-        image:
-          "https://img00.deviantart.net/b934/i/2016/198/b/0/triton_texture_map_14k_by_fargetanik-daac9tm.png",
+        image: "/images/placeholder.png",
         position: { top: "-100px", left: "100px" },
         size: "0.4",
       },
       {
         name: "Medio",
-        image:
-          "http://2.bp.blogspot.com/-NrsDNbSk8TU/VKmLHdOgw0I/AAAAAAAAHvY/dod1Kqv2Ta8/s1600/NereidTxt2.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-210px", left: "400px" },
         size: "0.45",
       },
       {
         name: "Alto",
-        image:
-          "http://4.bp.blogspot.com/-3eyaVs4az74/VKmMpLo6FYI/AAAAAAAAHvs/zK5NTllQYnk/s1600/NereidTxt.jpg",
+        image: "/images/placeholder.png",
         position: { top: "-70px", left: "900px" },
         size: "0.4",
       },
@@ -196,156 +175,134 @@ const rigData: Record<PlanetType, RigData> = {
     name: "Entropy",
     description:
       "Entropy creates chaotic yet harmonious sound experiences, with a system designed to generate organized sonic disorder.",
-    bgImage:
-      "https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png",
+    bgImage: "/images/placeholder.png",
     isMobile: true,
   },
   folly_hifi: {
     name: "Folly HiFi",
     description:
       "Folly HiFi delivers a warm, classic sound that honors traditional dub methods while innovating for modern Melbourne audiences.",
-    bgImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    bgImage: "/images/placeholder.png",
   },
   general_feelings: {
     name: "General Feelings",
     description:
       "General Feelings creates emotional, mood-driven sound experiences that resonate deeply with Melbourne's conscious bass community.",
-    bgImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    bgImage: "/images/placeholder.png",
   },
   goodys_hifi: {
     name: "Goodys HiFi",
     description:
       "Goodys HiFi brings quality, balanced sound with their meticulously crafted system, a mainstay in Melbourne's sound system culture.",
-    bgImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    bgImage: "/images/placeholder.png",
   },
   heartical_hi_powa: {
     name: "Heartical Hi-Powa",
     description:
       "Heartical Hi-Powa delivers soulful, roots-driven bass music through their powerful, heart-centered sound system setup.",
-    bgImage:
-      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg",
+    bgImage: "/images/placeholder.png",
   },
   housewifes_choice: {
     name: "Housewife's Choice",
     description:
       "Housewife's Choice brings a distinctive, domestic-inspired sound system experience that resonates with everyday rhythms and relatable vibes.",
-    bgImage:
-      "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+    bgImage: "/images/placeholder.png",
   },
   hyper_global: {
     name: "Hyper Global",
     description:
       "Hyper Global connects Melbourne to worldwide bass culture, with a system designed to showcase international sounds and influences.",
-    bgImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg",
+    bgImage: "/images/placeholder.png",
   },
   mahikai: {
     name: "Mahikai",
     description:
       "Mahikai delivers exotic, deep bass experiences influenced by global rhythms and sounds, with a uniquely crafted system.",
-    bgImage:
-      "https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png",
+    bgImage: "/images/placeholder.png",
   },
   new_flower: {
     name: "New Flower",
     description:
       "New Flower brings fresh, blooming sound to Melbourne's scene, with innovative approaches to traditional sound system culture.",
-    bgImage:
-      "https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png",
+    bgImage: "/images/placeholder.png",
   },
   redback: {
     name: "Redback",
     description:
       "Redback delivers distinctly Australian sound system culture, with powerful, dangerous bass that stings like its namesake.",
-    bgImage:
-      "https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png",
+    bgImage: "/images/placeholder.png",
   },
   roots_time: {
     name: "Roots Time",
     description:
       "Roots Time honors the foundations of dub and reggae with their traditionally built sound system focusing on authentic vibrations.",
-    bgImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    bgImage: "/images/placeholder.png",
   },
   rudi_sound: {
     name: "Rudi Sound",
     description:
       "Rudi Sound delivers raw, unprocessed bass experiences, with a focus on natural acoustics and pure sound reproduction.",
-    bgImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    bgImage: "/images/placeholder.png",
   },
   sasquatch: {
     name: "Sasquatch",
     description:
       "Sasquatch brings mythically large, hard-to-find bass to Melbourne, with a system that leaves a legendary impact on all who hear it.",
-    bgImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    bgImage: "/images/placeholder.png",
   },
   slack: {
     name: "Slack",
     description:
       "Slack creates laid-back, easy-flowing sound with a system designed for maximum vibes with minimum tension.",
-    bgImage:
-      "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/mars_texture.jpg",
+    bgImage: "/images/placeholder.png",
   },
   solidarity: {
     name: "Solidarity",
     description:
       "Solidarity unites Melbourne's bass community with a collectively built and operated sound system focused on community power.",
-    bgImage:
-      "https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA07782_hires.jpg",
+    bgImage: "/images/placeholder.png",
   },
   sub_temple: {
     name: "Sub Temple",
     description:
       "Sub Temple creates sacred bass experiences with their sound system designed to honor the spiritual dimensions of dub culture.",
-    bgImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_saturn.jpg",
+    bgImage: "/images/placeholder.png",
   },
   sub_yard: {
     name: "Sub Yard",
     description:
       "Sub Yard cultivates deep, grounded bass culture with their earthy, garden-grown sound system setup.",
-    bgImage:
-      "https://img00.deviantart.net/957c/i/2017/165/4/9/uranus_texture_map_by_jcpag2010-db7yjwb.png",
+    bgImage: "/images/placeholder.png",
   },
   system_unknown: {
     name: "System Unknown",
     description:
       "System Unknown brings mysterious, anonymous bass to Melbourne with their enigmatic sound system setup and secretive approach.",
-    bgImage:
-      "https://img00.deviantart.net/f068/i/2017/165/b/c/neptune_texture_map_by_jcpag2010-dbcjcv5.png",
+    bgImage: "/images/placeholder.png",
   },
   tribe: {
     name: "Tribe",
     description:
       "Tribe brings communal, collective bass experiences that unite Melbourne's sound system community through shared vibrations.",
-    bgImage:
-      "https://pre00.deviantart.net/4677/th/pre/f/2015/314/4/e/pluto_map__2015_nov_10__by_snowfall_the_cat-d918tlb.png",
+    bgImage: "/images/placeholder.png",
   },
   trip_hazard: {
     name: "Trip Hazard",
     description:
       "Trip Hazard creates dangerously psychedelic bass experiences with their mind-altering sound system approach.",
-    bgImage:
-      "https://www.solarsystemscope.com/images/textures/full/2k_makemake_fictional.jpg",
+    bgImage: "/images/placeholder.png",
   },
   virus: {
     name: "Virus",
     description:
       "Virus spreads infectious bass throughout Melbourne, with sound designed to replicate and spread through the community.",
-    bgImage:
-      "https://nasa3d.arc.nasa.gov/shared_assets/images/ven0aaa2/ven0aaa2-copy-428-321.jpg",
+    bgImage: "/images/placeholder.png",
   },
   yabai_hifi: {
     name: "Yabai HiFi",
     description:
       "Yabai HiFi delivers intense, Japanese-influenced sound system culture with their precisely engineered speaker stacks.",
-    bgImage:
-      "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+    bgImage: "/images/placeholder.png",
   },
 };
 
@@ -430,30 +387,28 @@ export default function SolarSystem({
 
     const isActive = rig === selectedPlanet;
 
-    // Optimize animations for device capability
-    const animationStyle = isActive
-      ? useHighDetail
-        ? "planet-rotate 60s infinite linear"
-        : "planet-rotate 120s infinite linear"
-      : "none";
+    // No texture animation for the placeholder
+    const animationStyle = "none";
 
     // Use simpler transitions on lower-capability devices
     const transitionStyle = useHighDetail
       ? "transform 2.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 2s cubic-bezier(0.19, 1, 0.22, 1)"
       : "transform 2s ease-out, opacity 1.5s ease-out";
 
+    // Use the same approach for all sound systems - no planet shapes or texture animations
     return {
       transform: `translateZ(${zSpacing}px) translateY(${ySpacing}px) rotatex(20deg) scale3d(${scaleValue}, ${scaleValue}, 1)`,
       opacity,
-      backgroundImage: `url(${rigData[rig].bgImage})`,
-      animation: animationStyle,
+      background: "transparent", // No backgroundImage - we'll use img elements instead
+      animation: "none", // No texture animation
       transition: transitionStyle,
+      borderRadius: "0", // Remove the circular shape
+      overflow: "visible", // Allow glow to extend beyond container
     };
   };
-
-  // Set rig-specific shadow and glow colors with progressive enhancement
-  const getRigShadow = (rig: PlanetType) => {
-    // Generate default colors if not in the original set
+  // Get rig-specific color info for shadows and glows
+  const getRigColors = (rig: PlanetType) => {
+    // Color mappings for each sound system
     const shadowColors: Record<string, string> = {
       adrians_wall: "rgba(188, 143, 127, 0.6)",
       agape: "#b85a07",
@@ -479,19 +434,9 @@ export default function SolarSystem({
     };
 
     // Generate default colors for rigs not explicitly defined
-    const shadowColor = shadowColors[rig] || "rgba(188, 143, 127, 0.6)";
-    const glowColor = glowColors[rig] || "rgba(234, 205, 199, 0.6)";
-
-    // Simpler shadow for low-capability devices
-    if (!useHighDetail) {
-      return {
-        boxShadow: `0 -500px 120px black inset, 0 0px 100px 30px ${glowColor} inset, 0 -10px 80px ${shadowColor}`,
-      };
-    }
-
-    // Full shadow effects for high-capability devices
     return {
-      boxShadow: `0 -590px 150px black inset, 0 0px 130px 40px ${glowColor} inset, 0 0px 23px 4px ${glowColor} inset, 0 -10px 130px ${shadowColor}`,
+      shadowColor: shadowColors[rig] || "rgba(188, 143, 127, 0.6)",
+      glowColor: glowColors[rig] || "rgba(234, 205, 199, 0.6)",
     };
   };
 
@@ -594,9 +539,37 @@ export default function SolarSystem({
                   className={styles.rig}
                   style={{
                     ...getRigStyles(rig, index),
-                    ...getRigShadow(rig),
+                    // Remove shadow effects for all sound systems
                   }}
                 >
+                  {/* Use image with glow for all sound systems */}
+                  <img
+                    src={rigData[rig].bgImage}
+                    alt={rigData[rig].name}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      filter: (() => {
+                        // Get colors for this sound system
+                        const { glowColor, shadowColor } = getRigColors(rig);
+
+                        // Apply different shadow effects based on whether this is the selected planet
+                        if (rig === selectedPlanet) {
+                          // Strong glow for the selected sound system
+                          return `drop-shadow(0 0 40px ${glowColor})`;
+                        } else {
+                          // Shadowy depth effect for non-selected systems that still follows the silhouette
+                          return `
+                            drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8))
+                            drop-shadow(0 0 20px ${shadowColor})
+                            brightness(0.7)
+                          `;
+                        }
+                      })(),
+                      position: "relative",
+                    }}
+                  />
                   {/* Render speakers if rig has them and device can handle it */}
                   {useHighDetail &&
                     rigData[rig].speakers?.map((speaker, speakerIndex) => (
@@ -621,11 +594,12 @@ export default function SolarSystem({
                         <div
                           className={styles.moon}
                           style={{
-                            backgroundImage: `url(${speaker.image})`,
                             left: speaker.position.left,
                             top: speaker.position.top,
                             transform: `scale(${speaker.size})`,
-                            boxShadow: "0px -30px 30px 10px black inset",
+                            background: "transparent", // No background image
+                            borderRadius: "0", // Remove circular shape
+                            overflow: "visible", // Allow glow to extend beyond container
                             opacity: rig === selectedPlanet ? 1 : 0,
                             transition:
                               rig === selectedPlanet
@@ -633,6 +607,18 @@ export default function SolarSystem({
                                 : "all 0.6s 0s",
                           }}
                         >
+                          {/* Use img for speaker instead of background-image */}
+                          <img
+                            src={speaker.image}
+                            alt={`${speaker.name} speaker`}
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "contain",
+                              filter:
+                                "drop-shadow(0 0 20px rgba(255, 255, 255, 0.6))",
+                            }}
+                          />
                           <h3 style={{ color: `var(--color-${rig})` }}>
                             Speaker
                           </h3>
@@ -641,13 +627,7 @@ export default function SolarSystem({
                       </div>
                     ))}
 
-                  {/* Dark overlay for rig ground shadow - simpler version for low capability */}
-                  <div
-                    className={styles.overlay}
-                    style={{
-                      opacity: useHighDetail ? 0.3 : 0.2, // Lighter shadow for low-end devices
-                    }}
-                  ></div>
+                  {/* Removing the overlay div that was creating the curved black shadow */}
                 </div>
               </div>
             </div>

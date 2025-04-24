@@ -41,8 +41,7 @@ const rigInfo: Record<
           "Each component of Adrian's Wall's rig has been carefully designed and constructed to deliver optimal sound quality and power.",
       },
     ],
-    image:
-      "https://i2.wp.com/www.astronomytrek.com/wp-content/uploads/2012/11/mercury-1.jpg?fit=678%2C381&amp;ssl=1",
+    image: "/images/placeholder.png",
   },
   agape: {
     title: "Agape",
@@ -72,8 +71,7 @@ const rigInfo: Record<
           "Agape's rig combines classic audio equipment with contemporary innovations, creating a distinctive sound that honors tradition while embracing new possibilities.",
       },
     ],
-    image:
-      "https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2014/2-whatistheave.jpg",
+    image: "/images/placeholder.png",
   },
   battery_acid: {
     title: "Battery Acid",
@@ -103,8 +101,7 @@ const rigInfo: Record<
           "Their events combine powerful sound with carefully designed lighting and visual elements, creating a multi-sensory experience.",
       },
     ],
-    image:
-      "https://images.pexels.com/photos/414171/pexels-photo-414171.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=350",
+    image: "/images/placeholder.png",
   },
   curse_of_the_scarab: {
     title: "Curse of the Scarab",
@@ -135,8 +132,7 @@ const rigInfo: Record<
           "Their rig features carefully positioned speakers that create distinct zones of sound, allowing for dynamic spatial audio experiences.",
       },
     ],
-    image:
-      "https://1.bp.blogspot.com/-ou7Je3OVg6U/WYtxDqjNp_I/AAAAAAAAACSQ/fsopS5VtFg4bmlv8hQNfiRYfJqTygCotQCLcBGAs/s2048/Martian%2Blandscape%2Bby%2BAmante%2BLombardi.jpg",
+    image: "/images/placeholder.png",
   },
   diy_hifi: {
     title: "DIY HiFi",
@@ -166,8 +162,7 @@ const rigInfo: Record<
           "In line with their sustainability focus, many components of DIY HiFi's sound system give new life to salvaged materials and equipment.",
       },
     ],
-    image:
-      "http://hanaleikauaivacation.com/wp-content/uploads/parser/jupiter-landscape-1.jpg",
+    image: "/images/placeholder.png",
   },
   dub_divination: {
     title: "Dub Divination",
@@ -197,7 +192,7 @@ const rigInfo: Record<
           "Their rig features both vintage and custom-built effects processors that are central to their distinctive sound.",
       },
     ],
-    image: "http://ak0.picdn.net/shutterstock/videos/4049260/thumb/1.jpg",
+    image: "/images/placeholder.png",
   },
   echo_chamber: {
     title: "Echo Chamber",
@@ -227,8 +222,7 @@ const rigInfo: Record<
           "Echo Chamber creates environments that encourage deep listening experiences, often incorporating comfortable seating areas alongside dance spaces.",
       },
     ],
-    image:
-      "http://www.cosmosup.com/wp-content/uploads/2016/02/Uranus-Facts-About-the-Planet-Uranus-700x325.jpg",
+    image: "/images/placeholder.png",
   },
   el_gran_mono: {
     title: "El Gran Mono",
@@ -258,8 +252,7 @@ const rigInfo: Record<
           "Their rig includes both contemporary sound system technology and traditional acoustic elements, reflecting their musical approach.",
       },
     ],
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy8Dd14tbXAzh1iz-EJl9tulRwH7Bb-SxX6sXpKFDbqb-NKwpE",
+    image: "/images/placeholder.png",
   },
   entropy: {
     title: "Entropy",
@@ -289,7 +282,7 @@ const rigInfo: Record<
           "Entropy regularly invites other artists and sound systems to participate in their events, fostering a spirit of community and creative exchange.",
       },
     ],
-    image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/asd.jpeg",
+    image: "/images/placeholder.png",
   },
   folly_hifi: {
     title: "Folly HiFi",
@@ -319,7 +312,7 @@ const rigInfo: Record<
           "Their rig features carefully restored classic amplifiers and processors that contribute to their distinctive warm sound.",
       },
     ],
-    image: "https://example.com/folly_hifi.jpg",
+    image: "/images/placeholder.png",
   },
   general_feelings: {
     title: "General Feelings",
@@ -349,7 +342,7 @@ const rigInfo: Record<
           "Their rig includes custom-built speakers that deliver exceptional midrange detail, bringing out the emotional nuances in vocals and melodic elements.",
       },
     ],
-    image: "https://example.com/general_feelings.jpg",
+    image: "/images/placeholder.png",
   },
   goodys_hifi: {
     title: "Goodys HiFi",
@@ -379,7 +372,7 @@ const rigInfo: Record<
           "Their rig delivers bass frequencies that can be felt throughout the body, creating the immersive experience central to sound system culture.",
       },
     ],
-    image: "https://example.com/goodys_hifi.jpg",
+    image: "/images/placeholder.png",
   },
   heartical_hi_powa: {
     title: "Heartical Hi-Powa",
@@ -410,7 +403,7 @@ const rigInfo: Record<
           "Their rig honors classic sound system approaches while integrating contemporary innovations for maximum impact and clarity.",
       },
     ],
-    image: "https://example.com/heartical_hi_powa.jpg",
+    image: "/images/placeholder.png",
   },
   housewifes_choice: {
     title: "Housewife's Choice",
@@ -440,7 +433,7 @@ const rigInfo: Record<
           "Their rig includes uniquely adapted speakers and processing that contribute to their distinctive sound signature.",
       },
     ],
-    image: "https://example.com/housewifes_choice.jpg",
+    image: "/images/placeholder.png",
   },
   hyper_global: {
     title: "Hyper Global",
@@ -470,7 +463,7 @@ const rigInfo: Record<
           "Their rig is designed to reproduce both subsonic bass and crystalline high frequencies with exceptional clarity, pushing the boundaries of auditory experience.",
       },
     ],
-    image: "https://example.com/hyper_global.jpg",
+    image: "/images/placeholder.png",
   },
   mahikai: {
     title: "Mahikai",
@@ -500,7 +493,7 @@ const rigInfo: Record<
           "Their rig features specialized acoustic elements inspired by traditional Pacific instruments, creating unique harmonic textures.",
       },
     ],
-    image: "https://example.com/mahikai.jpg",
+    image: "/images/placeholder.png",
   },
   new_flower: {
     title: "New Flower",
@@ -531,7 +524,7 @@ const rigInfo: Record<
           "Their rig features specialized horn designs that deliver exceptional clarity and projection, particularly suited to brass and vocal elements common in Ethiopian music.",
       },
     ],
-    image: "https://example.com/new_flower.jpg",
+    image: "/images/placeholder.png",
   },
   redback: {
     title: "Redback",
@@ -562,7 +555,7 @@ const rigInfo: Record<
           "Their rig includes proprietary amplification systems specifically designed to deliver clean, impactful bass even at extreme volumes.",
       },
     ],
-    image: "https://example.com/redback.jpg",
+    image: "/images/placeholder.png",
   },
   roots_time: {
     title: "Roots Time",
@@ -593,7 +586,7 @@ const rigInfo: Record<
           "Their rig is specifically tuned to highlight the distinctive qualities of roots reggae and dub, with particular attention to drum and bass elements.",
       },
     ],
-    image: "https://example.com/roots_time.jpg",
+    image: "/images/placeholder.png",
   },
   rudi_sound: {
     title: "Rudi Sound",
@@ -624,7 +617,7 @@ const rigInfo: Record<
           "Their rig features carefully designed horn-loaded components that deliver exceptional midrange detail and presence.",
       },
     ],
-    image: "https://example.com/rudi_sound.jpg",
+    image: "/images/placeholder.png",
   },
   sasquatch: {
     title: "Sasquatch",
@@ -654,7 +647,7 @@ const rigInfo: Record<
           "Their rig features components designed to produce frequencies at the very threshold of human perception, creating subtle yet powerful physical effects.",
       },
     ],
-    image: "https://example.com/sasquatch.jpg",
+    image: "/images/placeholder.png",
   },
   slack: {
     title: "Slack",
@@ -685,7 +678,7 @@ const rigInfo: Record<
           "Their rig includes both vintage and custom-built time-based effects units that are central to their distinctive sound.",
       },
     ],
-    image: "https://example.com/slack.jpg",
+    image: "/images/placeholder.png",
   },
   solidarity: {
     title: "Solidarity",
@@ -715,7 +708,7 @@ const rigInfo: Record<
           "Their rig is collectively owned and operated, with decisions made through consensus rather than individual authority.",
       },
     ],
-    image: "https://example.com/solidarity.jpg",
+    image: "/images/placeholder.png",
   },
   sub_temple: {
     title: "Sub Temple",
@@ -745,7 +738,7 @@ const rigInfo: Record<
           "Their rig features architectural elements designed to enhance certain frequencies through acoustic resonance, creating unique spatial effects.",
       },
     ],
-    image: "https://example.com/sub_temple.jpg",
+    image: "/images/placeholder.png",
   },
   sub_yard: {
     title: "Sub Yard",
@@ -775,7 +768,7 @@ const rigInfo: Record<
           "Their rig separates frequencies into distinct speaker components (bass, lower mid, upper mid, and high), following classic sound system design principles.",
       },
     ],
-    image: "https://example.com/sub_yard.jpg",
+    image: "/images/placeholder.png",
   },
   system_unknown: {
     title: "System Unknown",
@@ -805,7 +798,7 @@ const rigInfo: Record<
           "Their rig often features prototype components and unconventional approaches to sound reproduction, pushing the boundaries of audio experience.",
       },
     ],
-    image: "https://example.com/system_unknown.jpg",
+    image: "/images/placeholder.png",
   },
   tribe: {
     title: "Tribe",
@@ -835,7 +828,7 @@ const rigInfo: Record<
           "Their rig sometimes includes components that attendees can respectfully interact with, creating collaborative sound experiences.",
       },
     ],
-    image: "https://example.com/tribe.jpg",
+    image: "/images/placeholder.png",
   },
   trip_hazard: {
     title: "Trip Hazard",
@@ -867,7 +860,7 @@ const rigInfo: Record<
           "Their rig includes unique processing that creates subtle frequency shifts and modulations, adding to the psychedelic quality of the experience.",
       },
     ],
-    image: "https://example.com/trip_hazard.jpg",
+    image: "/images/placeholder.png",
   },
   virus: {
     title: "Virus",
@@ -897,7 +890,7 @@ const rigInfo: Record<
           "Their rig is designed to maintain definition and detail even at intense sound pressure levels, allowing for complex music to remain coherent.",
       },
     ],
-    image: "https://example.com/virus.jpg",
+    image: "/images/placeholder.png",
   },
   yabai_hifi: {
     title: "Yabai HiFi",
@@ -927,7 +920,7 @@ const rigInfo: Record<
           "Their rig produces remarkable sound pressure levels with relatively modest power requirements, demonstrating sophisticated engineering.",
       },
     ],
-    image: "https://example.com/yabai_hifi.jpg",
+    image: "/images/placeholder.png",
   },
 };
 
