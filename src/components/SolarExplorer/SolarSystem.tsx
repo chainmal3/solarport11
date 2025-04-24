@@ -550,23 +550,14 @@ export default function SolarSystem({
                       width: "100%",
                       height: "100%",
                       objectFit: "contain",
-                      filter: (() => {
-                        // Get colors for this sound system
-                        const { glowColor, shadowColor } = getRigColors(rig);
-
-                        // Apply different shadow effects based on whether this is the selected planet
-                        if (rig === selectedPlanet) {
-                          // Strong glow for the selected sound system
-                          return `drop-shadow(0 0 40px ${glowColor})`;
-                        } else {
-                          // Shadowy depth effect for non-selected systems that still follows the silhouette
-                          return `
-                            drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8))
-                            drop-shadow(0 0 20px ${shadowColor})
-                            brightness(0.7)
-                          `;
-                        }
-                      })(),
+                      filter:
+                        rig === selectedPlanet
+                          ? `drop-shadow(0 0 5px rgba(255, 255, 255, 0.7))
+                           drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) 
+                           drop-shadow(0 0 30px rgba(255, 255, 255, 0.7))`
+                          : `drop-shadow(0 0 3px rgba(255, 255, 255, 0.5))
+                           drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))
+                           brightness(0.8)`,
                       position: "relative",
                     }}
                   />

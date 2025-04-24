@@ -252,21 +252,24 @@ export default function PlanetMenu({
           }`}
           onClick={() => handleRigClick(rig)}
         >
-          {/* Dot indicator */}
-          <div className="w-3 h-3 rounded-full border-2 border-white relative">
-            {selectedPlanet === rig && (
-              <div className="absolute w-1 h-1 bg-white rounded-full left-0.5 top-0.5"></div>
-            )}
+          {/* Rig preview with enhanced glow effect when selected */}
+          <div className="w-[30px] h-[30px]">
+            <img
+              src={rigData[rig].previewImage}
+              alt={rigData[rig].name}
+              className="w-full h-full object-contain"
+              style={{
+                filter:
+                  selectedPlanet === rig
+                    ? `drop-shadow(0 0 3px ${rigData[rig].color}) 
+                       drop-shadow(0 0 8px ${rigData[rig].color}) 
+                       drop-shadow(0 0 15px ${rigData[rig].color})`
+                    : "none",
+                transform: selectedPlanet === rig ? "scale(1.15)" : "scale(1)",
+                transition: "filter 0.3s ease, transform 0.3s ease",
+              }}
+            />
           </div>
-
-          {/* Rig preview */}
-          <div
-            className="w-[30px] h-[30px] rounded-full ml-4 bg-cover"
-            style={{
-              backgroundImage: `url(${rigData[rig].previewImage})`,
-              boxShadow: "0 -13px 10px 2px black inset",
-            }}
-          ></div>
 
           {/* Rig info */}
           <div className="ml-5">
