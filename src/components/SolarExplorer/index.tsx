@@ -86,6 +86,7 @@ export default function SolarExplorer() {
       <SolarSystem
         selectedPlanet={selectedPlanet}
         onReadMore={handleReadMore}
+        onPlanetChange={handlePlanetSelect}
         useHighDetail={isHighCapabilityDevice}
       />
 

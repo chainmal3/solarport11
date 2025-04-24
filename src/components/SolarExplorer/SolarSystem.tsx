@@ -343,12 +343,14 @@ const rigOrder: PlanetType[] = [
 interface SoundSystemProps {
   selectedPlanet: PlanetType;
   onReadMore: (rig: PlanetType) => void;
+  onPlanetChange?: (rig: PlanetType) => void; // Callback for planet navigation
   useHighDetail?: boolean; // Flag for progressive enhancement based on device capability
 }
 
 export default function SolarSystem({
   selectedPlanet,
   onReadMore,
+  onPlanetChange,
   useHighDetail = true, // Default to high detail if not specified
 }: SoundSystemProps) {
   // Calculate rig position styles based on selected rig and device capability
@@ -543,24 +545,71 @@ export default function SolarSystem({
                   }}
                 >
                   {/* Use image with glow for all sound systems */}
-                  <img
-                    src={rigData[rig].bgImage}
-                    alt={rigData[rig].name}
+                  <div
                     style={{
                       width: "100%",
                       height: "100%",
-                      objectFit: "contain",
-                      filter:
-                        rig === selectedPlanet
-                          ? `drop-shadow(0 0 5px rgba(255, 255, 255, 0.7))
-                           drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) 
-                           drop-shadow(0 0 30px rgba(255, 255, 255, 0.7))`
-                          : `drop-shadow(0 0 3px rgba(255, 255, 255, 0.5))
-                           drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))
-                           brightness(0.8)`,
                       position: "relative",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
-                  />
+                  >
+                    {/* Clickable planet image with white glow effect */}
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        position: "relative",
+                        cursor: "pointer",
+                      }}
+                      onClick={(e) => {
+                        if (!onPlanetChange) return;
+
+                        // Determine if click was on left or right side of the image
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const clickX = e.clientX - rect.left;
+                        const isLeftSide = clickX < rect.width / 2;
+
+                        // Find next/previous planet
+                        const currentIndex = rigOrder.findIndex(
+                          (p) => p === selectedPlanet
+                        );
+                        let newIndex;
+
+                        if (isLeftSide) {
+                          // Go to previous planet
+                          newIndex =
+                            currentIndex > 0
+                              ? currentIndex - 1
+                              : rigOrder.length - 1;
+                        } else {
+                          // Go to next planet
+                          newIndex =
+                            currentIndex < rigOrder.length - 1
+                              ? currentIndex + 1
+                              : 0;
+                        }
+
+                        onPlanetChange(rigOrder[newIndex]);
+                      }}
+                    >
+                      <img
+                        src={rigData[rig].bgImage}
+                        alt={rigData[rig].name}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                          filter:
+                            rig === selectedPlanet
+                              ? "drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 80px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 120px rgba(255, 255, 255, 0.4))"
+                              : "drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 50px rgba(255, 255, 255, 0.3))",
+                          transition: "filter 0.3s ease",
+                        }}
+                      />
+                    </div>
+                  </div>
                   {/* Render speakers if rig has them and device can handle it */}
                   {useHighDetail &&
                     rigData[rig].speakers?.map((speaker, speakerIndex) => (
