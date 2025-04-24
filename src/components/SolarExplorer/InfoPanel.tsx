@@ -119,7 +119,8 @@ const rigInfo: Record<
           "Curse of the Scarab has designed their rig to reproduce extremely low frequencies with exceptional fidelity, creating physically felt sound experiences.",
       },
       {
-        title: "The crew incorporates acoustic instruments into their performances.",
+        title:
+          "The crew incorporates acoustic instruments into their performances.",
         content:
           "Alongside electronic elements, Curse of the Scarab often features live percussion and other acoustic instruments, creating a unique hybrid sound.",
       },
@@ -403,7 +404,8 @@ const rigInfo: Record<
           "Heartical Hi-Powa's selections emphasize positive messages and spiritual themes, creating uplifting experiences for their audiences.",
       },
       {
-        title: "The sound system incorporates traditional design with modern technology.",
+        title:
+          "The sound system incorporates traditional design with modern technology.",
         content:
           "Their rig honors classic sound system approaches while integrating contemporary innovations for maximum impact and clarity.",
       },
@@ -513,7 +515,8 @@ const rigInfo: Record<
           "New Flower's rig is specially tuned to highlight the complex melodic and rhythmic patterns characteristic of East African musical traditions.",
       },
       {
-        title: "The crew maintains an extensive collection of rare Ethiopian records.",
+        title:
+          "The crew maintains an extensive collection of rare Ethiopian records.",
         content:
           "Their sets often feature hard-to-find gems from the golden age of Ethiopian jazz and funk alongside contemporary productions.",
       },
@@ -543,7 +546,8 @@ const rigInfo: Record<
           "Redback's rig delivers exceptional volume and physical impact, creating sound experiences that can be felt throughout the body.",
       },
       {
-        title: "The crew is known for their distinctive red and black aesthetic.",
+        title:
+          "The crew is known for their distinctive red and black aesthetic.",
         content:
           "Their visual identity extends from their equipment to their event design, creating cohesive and recognizable experiences.",
       },
@@ -573,7 +577,8 @@ const rigInfo: Record<
           "Roots Time's rig is built according to classic specifications developed in Jamaica's golden age of sound system culture, delivering authentic sound quality and impact.",
       },
       {
-        title: "The crew has an extensive collection of original pressing reggae records.",
+        title:
+          "The crew has an extensive collection of original pressing reggae records.",
         content:
           "Their sets feature rare and valuable original recordings that showcase the evolution of reggae music through its various stages.",
       },
@@ -608,7 +613,8 @@ const rigInfo: Record<
           "Their events often include live horns, keyboards, and other instruments alongside electronic elements, creating unique hybrid performances.",
       },
       {
-        title: "They host regular listening sessions focused on jazz and dub connections.",
+        title:
+          "They host regular listening sessions focused on jazz and dub connections.",
         content:
           "Rudi Sound creates dedicated spaces for exploring the historical and ongoing dialogue between jazz and dub traditions.",
       },
@@ -673,7 +679,8 @@ const rigInfo: Record<
           "From classic dub reggae to contemporary ambient dub techno, Slack creates sonic spaces characterized by echoing delays and reverberant atmospheres.",
       },
       {
-        title: "The sound system features specialized delay and reverb processing.",
+        title:
+          "The sound system features specialized delay and reverb processing.",
         content:
           "Their rig includes both vintage and custom-built time-based effects units that are central to their distinctive sound.",
       },
@@ -843,7 +850,8 @@ const rigInfo: Record<
           "Trip Hazard's rig is configured to create three-dimensional sound fields with detailed spatial positioning and movement.",
       },
       {
-        title: "The crew is known for their synchronized audio-visual experiences.",
+        title:
+          "The crew is known for their synchronized audio-visual experiences.",
         content:
           "Their events feature carefully coordinated light and projection elements that complement and enhance the sonic journey.",
       },
@@ -853,7 +861,8 @@ const rigInfo: Record<
           "From dub to trance, experimental electronics to psychedelic rock, Trip Hazard unites diverse styles through their mind-expanding qualities.",
       },
       {
-        title: "The sound system incorporates specialized frequency modulation.",
+        title:
+          "The sound system incorporates specialized frequency modulation.",
         content:
           "Their rig includes unique processing that creates subtle frequency shifts and modulations, adding to the psychedelic quality of the experience.",
       },
@@ -922,6 +931,8 @@ const rigInfo: Record<
   },
 };
 
+import { useEffect } from "react";
+
 interface InfoPanelProps {
   planet: PlanetType;
   onClose: () => void;
@@ -930,14 +941,32 @@ interface InfoPanelProps {
 export default function InfoPanel({ planet, onClose }: InfoPanelProps) {
   const info = rigInfo[planet];
 
+  // Handle escape key for accessibility
+  useEffect(() => {
+    const handleEscKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscKey);
+    return () => window.removeEventListener("keydown", handleEscKey);
+  }, [onClose]);
+
   return (
     <>
       {/* Overlay/backdrop for closing the panel */}
-      <div className={styles.closeButton} onClick={onClose}>
+      <div
+        className={styles.closeButton}
+        onClick={onClose}
+        role="button"
+        aria-label="Close information panel"
+        tabIndex={0}
+      >
         Back
       </div>
 
-      {/* Info panel content - using className assignment that works with CSS modules */}
+      {/* Info panel content - preserving original animation with open class */}
       <div className={`${styles.infoPanel} ${styles.open}`}>
         <h1>{info.title}</h1>
 

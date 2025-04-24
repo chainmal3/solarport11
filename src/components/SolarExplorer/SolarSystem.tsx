@@ -386,51 +386,72 @@ const rigOrder: PlanetType[] = [
 interface SoundSystemProps {
   selectedPlanet: PlanetType;
   onReadMore: (rig: PlanetType) => void;
+  useHighDetail?: boolean; // Flag for progressive enhancement based on device capability
 }
 
 export default function SolarSystem({
   selectedPlanet,
   onReadMore,
+  useHighDetail = true, // Default to high detail if not specified
 }: SoundSystemProps) {
-  // Calculate rig position styles based on selected rig
+  // Calculate rig position styles based on selected rig and device capability
   const getRigStyles = (rig: PlanetType, index: number) => {
     const rigIndex = rigOrder.findIndex((p) => p === rig);
     const selectedIndex = rigOrder.findIndex((p) => p === selectedPlanet);
     const distance = index - selectedIndex;
 
-    // Exponential spacing to create more gradual progression
-    const baseSpacingMultiplier = 1.5; // Adjust this to control spacing
+    // Adjust spacing and animation complexity based on device capability
+    const baseSpacingMultiplier = useHighDetail ? 1.5 : 1.2; // Less dramatic spacing on lower-end devices
+
+    // Use simpler transforms for low-end devices
     const zSpacing =
       Math.sign(distance) *
       Math.pow(Math.abs(distance) + 1, baseSpacingMultiplier) *
-      -4000;
+      (useHighDetail ? -4000 : -3000); // Less extreme depth for low-end devices
+
     const ySpacing =
       Math.sign(distance) *
       Math.pow(Math.abs(distance) + 1, baseSpacingMultiplier) *
-      500;
+      (useHighDetail ? 500 : 400);
 
-    // Scaling with more gradual falloff
-    const scaleValue =
-      distance === 0
+    // Simpler scaling for low-end devices
+    const scaleValue = useHighDetail
+      ? distance === 0
         ? 1
-        : Math.max(0.2, 1 - Math.pow(Math.abs(distance), 1.2) * 0.3);
+        : Math.max(0.2, 1 - Math.pow(Math.abs(distance), 1.2) * 0.3)
+      : distance === 0
+      ? 1
+      : Math.max(0.2, 1 - Math.abs(distance) * 0.2);
 
-    // Opacity with smoother transition
-    const opacity = Math.max(0, 1 - Math.pow(Math.abs(distance), 1.5) * 0.6);
+    // Simpler opacity calculation for low-end devices
+    const opacity = useHighDetail
+      ? Math.max(0, 1 - Math.pow(Math.abs(distance), 1.5) * 0.6)
+      : Math.max(0, 1 - Math.abs(distance) * 0.3);
 
     const isActive = rig === selectedPlanet;
+
+    // Optimize animations for device capability
+    const animationStyle = isActive
+      ? useHighDetail
+        ? "planet-rotate 60s infinite linear"
+        : "planet-rotate 120s infinite linear"
+      : "none";
+
+    // Use simpler transitions on lower-capability devices
+    const transitionStyle = useHighDetail
+      ? "transform 2.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 2s cubic-bezier(0.19, 1, 0.22, 1)"
+      : "transform 2s ease-out, opacity 1.5s ease-out";
 
     return {
       transform: `translateZ(${zSpacing}px) translateY(${ySpacing}px) rotatex(20deg) scale3d(${scaleValue}, ${scaleValue}, 1)`,
       opacity,
       backgroundImage: `url(${rigData[rig].bgImage})`,
-      animation: isActive ? "planet-rotate 60s infinite linear" : "none",
-      transition:
-        "transform 2.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 2s cubic-bezier(0.19, 1, 0.22, 1)",
+      animation: animationStyle,
+      transition: transitionStyle,
     };
   };
 
-  // Set rig-specific shadow and glow colors
+  // Set rig-specific shadow and glow colors with progressive enhancement
   const getRigShadow = (rig: PlanetType) => {
     // Generate default colors if not in the original set
     const shadowColors: Record<string, string> = {
@@ -461,6 +482,14 @@ export default function SolarSystem({
     const shadowColor = shadowColors[rig] || "rgba(188, 143, 127, 0.6)";
     const glowColor = glowColors[rig] || "rgba(234, 205, 199, 0.6)";
 
+    // Simpler shadow for low-capability devices
+    if (!useHighDetail) {
+      return {
+        boxShadow: `0 -500px 120px black inset, 0 0px 100px 30px ${glowColor} inset, 0 -10px 80px ${shadowColor}`,
+      };
+    }
+
+    // Full shadow effects for high-capability devices
     return {
       boxShadow: `0 -590px 150px black inset, 0 0px 130px 40px ${glowColor} inset, 0 0px 23px 4px ${glowColor} inset, 0 -10px 130px ${shadowColor}`,
     };
@@ -473,7 +502,7 @@ export default function SolarSystem({
 
   return (
     <>
-      {/* Fixed text container outside 3D transform space */}
+      {/* Fixed text container outside 3D transform space - with responsive position */}
       {rigOrder.map(
         (rig) =>
           rig === selectedPlanet && (
@@ -483,10 +512,15 @@ export default function SolarSystem({
               style={{
                 opacity: 1,
                 position: "fixed",
-                top: "60vh", // Position text in the lower part of the viewport
+                // Position text in the lower part of the viewport
+                top: "60vh",
                 left: "0",
                 right: "0",
                 zIndex: 9999,
+                // Add media query class instead of window.innerWidth check
+                ...(typeof window !== "undefined" && window.innerWidth < 768
+                  ? { top: "50vh" }
+                  : {}),
               }}
             >
               <h2
@@ -542,63 +576,83 @@ export default function SolarSystem({
       )}
 
       <div className={styles.viewport}>
-        {rigOrder.map((rig, index) => (
-          <div key={rig} className={styles.soundSystem}>
-            <div className={styles.rigContainer}>
-              <div
-                className={styles.rig}
-                style={{
-                  ...getRigStyles(rig, index),
-                  ...getRigShadow(rig),
-                }}
-              >
-                {/* Render speakers if rig has them */}
-                {rigData[rig].speakers?.map((speaker, speakerIndex) => (
-                  <div key={`${rig}-${speaker.name}`}>
-                    {/* Speaker trajectory */}
-                    <div
-                      className={styles.trajectory}
-                      style={{
-                        width: `${1500 + speakerIndex * 30}px`,
-                        height: `${1500 + speakerIndex * 30}px`,
-                        left: `${-210 - speakerIndex * 50}px`,
-                        top: `${-189 - speakerIndex * 20}px`,
-                        opacity: rig === selectedPlanet ? 0.2 : 0,
-                        transition:
-                          rig === selectedPlanet
-                            ? "all 0.6s 0.9s"
-                            : "all 0.6s 0s",
-                      }}
-                    ></div>
+        {/* Only render visible planets to improve performance on low-end devices */}
+        {rigOrder.map((rig, index) => {
+          // For low-capability devices, only render planets that are close to the selected one
+          const selectedIndex = rigOrder.findIndex((p) => p === selectedPlanet);
+          const distance = Math.abs(index - selectedIndex);
 
-                    {/* Speaker itself */}
-                    <div
-                      className={styles.moon}
-                      style={{
-                        backgroundImage: `url(${speaker.image})`,
-                        left: speaker.position.left,
-                        top: speaker.position.top,
-                        transform: `scale(${speaker.size})`,
-                        boxShadow: "0px -30px 30px 10px black inset",
-                        opacity: rig === selectedPlanet ? 1 : 0,
-                        transition:
-                          rig === selectedPlanet
-                            ? "all 1s 1.2s"
-                            : "all 0.6s 0s",
-                      }}
-                    >
-                      <h3 style={{ color: `var(--color-${rig})` }}>Speaker</h3>
-                      <h2>{speaker.name}</h2>
-                    </div>
-                  </div>
-                ))}
+          // Skip rendering far planets on low-capability devices
+          if (!useHighDetail && distance > 5) {
+            return null;
+          }
 
-                {/* Dark overlay for rig ground shadow */}
-                <div className={styles.overlay}></div>
+          return (
+            <div key={rig} className={styles.soundSystem}>
+              <div className={styles.rigContainer}>
+                <div
+                  className={styles.rig}
+                  style={{
+                    ...getRigStyles(rig, index),
+                    ...getRigShadow(rig),
+                  }}
+                >
+                  {/* Render speakers if rig has them and device can handle it */}
+                  {useHighDetail &&
+                    rigData[rig].speakers?.map((speaker, speakerIndex) => (
+                      <div key={`${rig}-${speaker.name}`}>
+                        {/* Speaker trajectory */}
+                        <div
+                          className={styles.trajectory}
+                          style={{
+                            width: `${1500 + speakerIndex * 30}px`,
+                            height: `${1500 + speakerIndex * 30}px`,
+                            left: `${-210 - speakerIndex * 50}px`,
+                            top: `${-189 - speakerIndex * 20}px`,
+                            opacity: rig === selectedPlanet ? 0.2 : 0,
+                            transition:
+                              rig === selectedPlanet
+                                ? "all 0.6s 0.9s"
+                                : "all 0.6s 0s",
+                          }}
+                        ></div>
+
+                        {/* Speaker itself */}
+                        <div
+                          className={styles.moon}
+                          style={{
+                            backgroundImage: `url(${speaker.image})`,
+                            left: speaker.position.left,
+                            top: speaker.position.top,
+                            transform: `scale(${speaker.size})`,
+                            boxShadow: "0px -30px 30px 10px black inset",
+                            opacity: rig === selectedPlanet ? 1 : 0,
+                            transition:
+                              rig === selectedPlanet
+                                ? "all 1s 1.2s"
+                                : "all 0.6s 0s",
+                          }}
+                        >
+                          <h3 style={{ color: `var(--color-${rig})` }}>
+                            Speaker
+                          </h3>
+                          <h2>{speaker.name}</h2>
+                        </div>
+                      </div>
+                    ))}
+
+                  {/* Dark overlay for rig ground shadow - simpler version for low capability */}
+                  <div
+                    className={styles.overlay}
+                    style={{
+                      opacity: useHighDetail ? 0.3 : 0.2, // Lighter shadow for low-end devices
+                    }}
+                  ></div>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </>
   );

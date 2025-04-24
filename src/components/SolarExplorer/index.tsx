@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import styles from "./SolarExplorer.module.scss";
 import PlanetMenu from "./PlanetMenu";
 import SolarSystem from "./SolarSystem";
-import InfoPanel from "./InfoPanel";
+
+// Lazy load non-critical components for better performance
+const InfoPanel = lazy(() => import("./InfoPanel"));
 
 export type PlanetType =
   | "adrians_wall"
@@ -41,6 +43,26 @@ export type PlanetType =
 export default function SolarExplorer() {
   const [selectedPlanet, setSelectedPlanet] = useState<PlanetType>("agape");
   const [openPanel, setOpenPanel] = useState<PlanetType | null>(null);
+  const [isHighCapabilityDevice, setIsHighCapabilityDevice] = useState(false);
+
+  useEffect(() => {
+    // Detect device capabilities for progressive enhancement
+    const checkCapabilities = () => {
+      // Simple heuristic - can be enhanced
+      const isHighEnd =
+        !window.matchMedia("(max-width: 767px)").matches &&
+        (navigator.hardwareConcurrency > 2 ||
+          !("hardwareConcurrency" in navigator));
+
+      setIsHighCapabilityDevice(isHighEnd);
+    };
+
+    checkCapabilities();
+
+    // Re-check on resize for adaptive enhancement
+    window.addEventListener("resize", checkCapabilities);
+    return () => window.removeEventListener("resize", checkCapabilities);
+  }, []);
 
   const handlePlanetSelect = (planet: PlanetType) => {
     setSelectedPlanet(planet);
@@ -64,9 +86,16 @@ export default function SolarExplorer() {
       <SolarSystem
         selectedPlanet={selectedPlanet}
         onReadMore={handleReadMore}
+        useHighDetail={isHighCapabilityDevice}
       />
 
-      {openPanel && <InfoPanel planet={openPanel} onClose={handleClosePanel} />}
+      {openPanel && (
+        <Suspense
+          fallback={<div className={styles.loading}>Loading details...</div>}
+        >
+          <InfoPanel planet={openPanel} onClose={handleClosePanel} />
+        </Suspense>
+      )}
     </div>
   );
 }
